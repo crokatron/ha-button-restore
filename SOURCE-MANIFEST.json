@@ -1,0 +1,10 @@
+{
+  "projects-host/ha-custom-components/mungoon_button_restore/__init__.py": "43bf2b8faeaadd9ffe7f6f689d02a163efcb7a8962949d75185e1a335463d1f0",
+  "projects-host/ha-custom-components/mungoon_button_restore/config_flow.py": "0ab7bb618645378f7b7f196b8101ba646c317f611c0191097a160a57182d7dd7",
+  "projects-host/ha-custom-components/mungoon_button_restore/manifest.json": "e5675fefa12f21e49eacd93733031480a662d7f13ea82396d5548e8d733a8da0",
+  "projects-host/ha-custom-components/mungoon_button_restore/policy.py": "1f03ea0984cd2e1bb9ceb088ae06486aa73998cb2897c503e8a3a259341d51cd",
+  "projects-host/ha-custom-components/mungoon_button_restore/README.md": "91dd2664d7b34f0dfb99eac79ba29bb3faa7475f9bc494c1f5ecf4feeaeb8ed6",
+  "projects-host/ha-custom-components/mungoon_button_restore/services.yaml": "f56a967d6f951ce14508dc4bdd68a6118a34edd155e6c19b1240a5c7e6513f37",
+  "projects-host/test_button_restore_priority.py": "4114b93471b48780c3e3a1947388b570022e880c8bdf1cde775ad19ef321fa6c",
+  "examples/button-restore-scripts.yaml": "e454680cbe6afa55d5116934df0dc64181cbee94e15a16d4763e0a09faeeb522"
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "boxes": [
+      {
+        "h": 86.375,
+        "selector": "#capture",
+        "text": "Single press captures the group before applying the temporary action.",
+        "title": "Remember, then turn off",
+        "w": 260,
+        "x": 318,
+        "y": 484.515625
+      },
+      {
+        "h": 86.375,
+        "selector": "#later",
+        "text": "A later OFF command takes priority even if the device already looks off.",
+        "title": "Let another automation run",
+        "w": 260,
+        "x": 318,
+        "y": 572.890625
+      },
+      {
+        "h": 507.296875,
+        "selector": "#scene",
+        "text": "After double press, the lamp returns on while the scheduled-off dehumidifier stays off.",
+        "title": "Restore only eligible devices",
+        "w": 606.90625,
+        "x": 612,
+        "y": 450.515625
+      }
+    ],
+    "height": 1408,
+    "width": 2055,
+    "key": "simulation",
+    "title": "Try the working offline example",
+    "caption": "Screenshot of this project’s interactive demo. Side-by-side services are explicitly simulated.",
+    "cropHeight": 998.8125
+  }
+]

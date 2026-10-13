@@ -1,0 +1,20 @@
+# Merge into scripts.yaml; replace light.example_lamp with your own test entity.
+demo_apply:
+  alias: Demo - Remember and turn off
+  mode: restart
+  sequence:
+    - action: mungoon_button_restore.capture
+      data:
+        key: example_button
+        entity_id:
+          - light.example_lamp
+    - action: light.turn_off
+      target:
+        entity_id: light.example_lamp
+demo_restore:
+  alias: Demo - Restore eligible devices
+  mode: restart
+  sequence:
+    - action: mungoon_button_restore.restore
+      data:
+        key: example_button

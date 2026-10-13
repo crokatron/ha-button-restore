@@ -1,0 +1,28 @@
+capture:
+  name: Remember button states
+  description: Capture states before a button sequence. Later HA commands take priority over restore.
+  fields:
+    key:
+      required: true
+      selector:
+        text:
+    entity_id:
+      required: true
+      selector:
+        entity:
+          multiple: true
+restore:
+  name: Restore unchanged button devices
+  description: Restore only devices that have not received a newer HA command.
+  fields:
+    key:
+      required: true
+      selector:
+        text:
+clear:
+  name: Forget button states
+  fields:
+    key:
+      required: true
+      selector:
+        text:

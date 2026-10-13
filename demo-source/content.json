@@ -1,0 +1,74 @@
+{
+  "slug": "ha-button-restore",
+  "title": "HA Button Restore",
+  "summary": "Give a temporary button action an intelligent restore. Capture selected HA entity states before a sequence such as lights off and dehumidifiers off; later restore only devices that have not received a newer HA control command. The logic runs inside Home Assistant, without a browser or Projects server staying open.",
+  "features": [
+    [
+      "Capture",
+      "Remember selected entity states under a named key before changing them.",
+      "HA action"
+    ],
+    [
+      "Restore",
+      "Restore eligible captured entities once using the same key.",
+      "HA action"
+    ],
+    [
+      "Later-command priority",
+      "A newer HA service command invalidates restoration for that device, even if its displayed state did not change.",
+      "Automatic"
+    ],
+    [
+      "Physical-device grouping",
+      "Related control entities on the same registered device invalidate together.",
+      "Automatic"
+    ],
+    [
+      "Clear",
+      "Discard a remembered group without restoring it.",
+      "HA action"
+    ],
+    [
+      "Button-independent",
+      "Works with any button integration that exposes usable triggers; this component does not discover press types.",
+      "Integration boundary"
+    ]
+  ],
+  "workflows": [
+    [
+      "Understand the sequence",
+      [
+        "Suppose a lamp is on. A single press captures that state, then switches the lamp off for a temporary scene.",
+        "A double press restores the lamp only if no newer HA command has claimed it. If a scheduled lights-off automation ran in the meantime, the lamp stays off.",
+        "Use the same key for capture and restore. Separate unrelated buttons/scenes with different keys to avoid replacing each other’s snapshots."
+      ]
+    ],
+    [
+      "Assign a group to one button",
+      [
+        "Identify the exact single-press trigger provided by your physical button integration. Choose the devices to affect.",
+        "In the single-press automation, call mungoon_button_restore.capture first, with key and entity_id list. Follow it with the desired light, fan, switch or other HA actions.",
+        "In the double-press automation, call mungoon_button_restore.restore with that same key. There is no need to manually guess the previous on/off values.",
+        "Start with one test light, then expand the group. Confirm your button supports double press; a label in a builder cannot create an event the hardware never emits."
+      ]
+    ],
+    [
+      "Test a later automation taking priority",
+      [
+        "Turn the test light on, trigger capture followed by off, then issue a separate lights-off command from HA.",
+        "Trigger restore. The test light should remain off because the later command takes priority, even though it was already visibly off.",
+        "Repeat without the intervening command. Restore should now return the remembered state.",
+        "For a multi-entity device, test the actual control entity your other automations use. Device-registry grouping is important to the priority behaviour."
+      ]
+    ],
+    [
+      "Discard or replace a saved scene",
+      [
+        "Call mungoon_button_restore.clear with the key when the temporary scene should be forgotten.",
+        "Capturing under an existing key replaces its old snapshot. Restore consumes the snapshot, so pressing restore twice does not repeat an old scene.",
+        "After HA restart, integration unload or scene reload, take a new capture. Snapshots are held in memory, not a persistent undo history."
+      ]
+    ]
+  ],
+  "limits": "Direct changes through a physical remote or vendor application may not produce a HA service event and are not universally tracked. This is targeted restore, not general undo. Eight policy tests passed previously; a clean HA installation has not been rerun for this documentation update."
+}
