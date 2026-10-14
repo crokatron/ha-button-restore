@@ -12,4 +12,4 @@ Capture a device group before a temporary action, then restore only devices not 
 
 **Next maintainer action:** Test capture→off→restore and capture→off→newer off→restore on a spare entity, including another entity of the same physical device. Check compatibility with the target HA version; vendor-app/remote changes may not emit tracked HA commands.
 
-**Status:** private upload verified on 14 October 2026. These guides accompany the private source package. Live runtime, data backups and full recovery were not retested. Public release needs separate approval.
+**Status:** private upload verified on 14 October 2026. These guides accompany the source package. Live runtime, data backups and full recovery were not retested. Public sharing was authorised on 14 October 2026; the NAS backup remains private.
