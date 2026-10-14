@@ -1,5 +1,7 @@
 # HA Button Restore
 
+**Maintaining this project? [Start here](docs/START-HERE.md) · [Detailed handover](docs/HANDOVER.md)**
+
 Give a temporary button action an intelligent restore. Capture selected HA entity states before a sequence such as lights off and dehumidifiers off; later restore only devices that have not received a newer HA control command. The logic runs inside Home Assistant, without a browser or Projects server staying open.
 
 **Private preview · not published.**
